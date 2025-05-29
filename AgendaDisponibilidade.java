@@ -37,7 +37,7 @@ public class AgendaDisponibilidade {
         if (!horarios.get(hora)) {
             throw new AgendaNaoDisponivelException("Horário " + hora + " já está ocupado no dia " + data);
         }
-        horarios.put(hora, false); // Marca como ocupado
+        horarios.put(hora, false);
         System.out.println("Agendamento realizado para " + data + " às " + hora);
     }
 }
