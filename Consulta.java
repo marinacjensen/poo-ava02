@@ -3,10 +3,15 @@ import java.time.LocalTime;
 
 public class Consulta implements IAgendavel {
 
-    @Override
+    private LocalDate data;
+    private LocalTime hora;
+    private TipoConsulta tpConsulta;
+    private Medico medico;
+    private Paciente paciente;
+    private Prontuario prontuario;
+
     public void agendar(LocalDate data, LocalTime hora) throws AgendaNaoDisponivelException {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'agendar'");
+        
     }
 
     @Override
