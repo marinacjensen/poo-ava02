@@ -8,14 +8,14 @@ public enum TipoSanguineo {
     AB_NEGATIVO("AB-"),
     AB_POSITIVO("AB+");
 
-    private final String descricao;
+    private final String desc;
 
     TipoSanguineo(String descricao) {
-        this.descricao = descricao;
+        this.desc = descricao;
     }
 
     public String getDescricao() {
-        return this.descricao;
+        return this.desc;
     }
 
     // Método para buscar o enum pela descrição
@@ -25,6 +25,6 @@ public enum TipoSanguineo {
                 return tipo;
             }
         }
-        throw new IllegalArgumentException("Tipo sanguíneo inválido: " + descricao);
+        throw new IllegalArgumentException("Tipo inválido: " + descricao);
     }
 }
