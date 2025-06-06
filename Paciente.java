@@ -36,6 +36,7 @@ public class Paciente extends Pessoa {
         if (historicoConsultas.isEmpty()) {
             System.out.println("Não há consultas no histórico.");
         } else {
+            System.out.println("Histórico de " + nome + ":");
             for (Consulta c : historicoConsultas) {
                 System.out.println(c.getResumo());
             }
