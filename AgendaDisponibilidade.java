@@ -29,7 +29,7 @@ public class AgendaDisponibilidade {
         }
     }
 
-    public void agendar(LocalDate data, LocalTime hora) throws Exception {
+    public void agendar(LocalDate data, LocalTime hora) throws AgendaNaoDisponivelException {
         Map<LocalTime, Boolean> horarios = agenda.get(data);
         if (horarios == null || !horarios.containsKey(hora)) {
             throw new AgendaNaoDisponivelException("Horário não existe na agenda do dia " + data);

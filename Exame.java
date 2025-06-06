@@ -9,14 +9,14 @@ public class Exame implements IAgendavel {
     private Paciente paciente;
     private String laudo;
 
-    // Construtor
-    public Exame(String nome, Responsavel responsavel, Paciente paciente) {
+        public Exame(String nome, Responsavel responsavel, Paciente paciente, LocalDate data, LocalTime hora) {
         this.nome = nome;
         this.responsavel = responsavel;
         this.paciente = paciente;
+        this.data = data;
+        this.hora = hora;
     }
 
-    // Implementação da interface Agendavel
     @Override
     public void agendar(LocalDate data, LocalTime hora) {
         this.data = data;

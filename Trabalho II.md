@@ -72,14 +72,14 @@ Condicoes Gerais:
 * Ao encerrar um exame é gerado o laudo
 
 Ações que devemos conseguir fazer na plataforma (cada item abaixo vale 1pto)
-* Criar um paciente
-* Criar uma medica
-* Criar um tecnico
-* Disponibilizar Agenda
-* Fazer um agendamento
-* Quando acontece o agendamento é criada uma consulta
-* Encerrar consulta / Gerar prontuario da consulta
-* Marcar exame
+* Criar um paciente - OK
+* Criar uma medica - OK
+* Criar um tecnico - OK
+* Disponibilizar Agenda - OK
+* Fazer um agendamento - OK
+* Quando acontece o agendamento é criada uma consulta - OK
+* Encerrar consulta / Gerar prontuario da consulta - OK
+* Marcar exame 
 * Encerrar Exame / Gerar Laudo do exame
-* Visualizar historico de um paciente
+* Visualizar historico de um paciente - OK
 

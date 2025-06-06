@@ -9,15 +9,17 @@ public class Consulta implements IAgendavel {
     private Paciente paciente;
     private Prontuario prontuario;
 
-    public Consulta(Medico medico, Paciente paciente, TipoConsulta tipo) {
+    public Consulta(Medico medico, Paciente paciente, LocalDate data, LocalTime hora, TipoConsulta tipo) {
         this.medico = medico;
         this.paciente = paciente;
         this.tipo = tipo;
+        this.data = data;
+        this.hora = hora;
     }
 
     @Override
     public void agendar(LocalDate data, LocalTime hora) throws AgendaNaoDisponivelException {
-        medico.agendarConsulta(data, hora); 
+        medico.getAgenda().agendar(data, hora);
         this.data = data;
         this.hora = hora;
     }

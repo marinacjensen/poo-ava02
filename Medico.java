@@ -3,7 +3,7 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Medico extends Pessoa {
+public class Medico extends Responsavel {
     private String crm;
     private List<String> especialidades;
     private AgendaDisponibilidade agenda;
@@ -15,8 +15,6 @@ public class Medico extends Pessoa {
         this.agenda = new AgendaDisponibilidade();
     }
 
-    String especialidadesStr = String.join(", ", especialidades);
-
     @Override
     public String toString() {
         return "Médica: " + nome +
@@ -24,11 +22,25 @@ public class Medico extends Pessoa {
                 ", CRM: " + crm +
                 ", Email: " + email +
                 ", Telefone: " + telefone +
-                ", Especialidades: " + especialidadesStr;
+                ", Especialidades: " + especialidades;
     }
 
     public void abrirAgenda(LocalDate data) {
         agenda.abrirAgenda(data);
+    }
+
+    public Consulta realizarAgendamentoConsulta(Paciente paciente, LocalDate data, LocalTime hora, TipoConsulta tipo)
+            throws AgendaNaoDisponivelException {
+        this.agenda.agendar(data, hora);
+        Consulta consulta = new Consulta(this, paciente, data, hora, tipo);
+        paciente.adicionarConsultaNoHistorico(consulta);
+        return consulta;
+    }
+
+    public Exame realizarAgendamentoExame(String nomeExame, Paciente paciente, LocalDate data, LocalTime hora) {
+        Exame exame = new Exame(nomeExame, this, paciente, data, hora);
+        System.out.println("Exame agendado com sucesso.");
+        return exame;
     }
 
     // Getters e setters
@@ -52,8 +64,4 @@ public class Medico extends Pessoa {
         return agenda;
     }
 
-    public void agendarConsulta(LocalDate data, LocalTime hora) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'agendarConsulta'");
-    }
 }
